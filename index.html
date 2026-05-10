@@ -14,11 +14,11 @@
 <nav>
   <div class="logo">Aichatou<span>.</span>Portfolio</div>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Projets</a></li>
-    <li><a href="#process">Processus</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a onclick="scrollToSection('about')" style="cursor:pointer">À propos</a></li>
+    <li><a onclick="scrollToSection('services')" style="cursor:pointer">Services</a></li>
+    <li><a onclick="scrollToSection('portfolio')" style="cursor:pointer">Projets</a></li>
+    <li><a onclick="scrollToSection('process')" style="cursor:pointer">Processus</a></li>
+    <li><a onclick="scrollToSection('contact')" class="nav-cta" style="cursor:pointer">Contact</a></li>
   </ul>
   <button id="burger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;z-index:200;padding:4px">
     <span style="display:block;width:24px;height:2px;background:white;transition:all .3s;border-radius:2px"></span>
@@ -26,12 +26,13 @@
     <span style="display:block;width:24px;height:2px;background:white;transition:all .3s;border-radius:2px"></span>
   </button>
 </nav>
+
 <ul id="mobile-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,14,46,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;list-style:none;z-index:99">
-<li><a onclick="scrollToSection('about')" style="cursor:pointer">À propos</a></li>
-<li><a onclick="scrollToSection('services')" style="cursor:pointer">Services</a></li>
-<li><a onclick="scrollToSection('portfolio')" style="cursor:pointer">Projets</a></li>
-<li><a onclick="scrollToSection('process')" style="cursor:pointer">Processus</a></li>
-<li><a onclick="scrollToSection('contact')" style="cursor:pointer">Contact</a></li>
+  <li><a onclick="scrollToSection('about')" style="cursor:pointer">À propos</a></li>
+  <li><a onclick="scrollToSection('services')" style="cursor:pointer">Services</a></li>
+  <li><a onclick="scrollToSection('portfolio')" style="cursor:pointer">Projets</a></li>
+  <li><a onclick="scrollToSection('process')" style="cursor:pointer">Processus</a></li>
+  <li><a onclick="scrollToSection('contact')" style="cursor:pointer">Contact</a></li>
 </ul>
 
 <section id="hero">
@@ -48,8 +49,8 @@
       <span class="tag">Branding</span>
     </div>
     <div class="hero-btns">
-      <a href="#portfolio" class="btn-p">Voir mes projets ↗</a>
-      <a href="#contact" class="btn-o">Me contacter</a>
+      <a onclick="scrollToSection('portfolio')" class="btn-p" style="cursor:pointer">Voir mes projets ↗</a>
+      <a onclick="scrollToSection('contact')" class="btn-o" style="cursor:pointer">Me contacter</a>
     </div>
   </div>
 
@@ -57,8 +58,8 @@
     <div class="photo-ring">
       <div class="sc top"><strong>2+</strong>Projets livrés</div>
       <div class="sc mid"><strong>50%</strong>Satisfaction</div>
-      <img class="photo-img" id="myPhoto" src="1.jpeg" alt="Photo de profil" >
-        <div class="pb2">5 mois<br>d'expérience</div>
+      <img class="photo-img" id="myPhoto" src="1.jpeg" alt="Photo de profil">
+      <div class="pb2">5 mois<br>d'expérience</div>
     </div>
   </div>
 </section>
@@ -88,7 +89,7 @@
           <span class="sp">Facebook</span><span class="sp">Instagram</span><span class="sp">Figma</span><span class="sp">Github</span>
         </div>
       </div>
-      <a href="#contact" class="btn-p reveal" style="width:fit-content">Travaillons ensemble →</a>
+      <a onclick="scrollToSection('contact')" class="btn-p reveal" style="width:fit-content;cursor:pointer">Travaillons ensemble →</a>
     </div>
   </div>
 </section>
@@ -102,22 +103,17 @@
       <span class="srv-icon">📱</span>
       <h3>Community Management</h3>
       <p>Stratégie éditoriale, création de contenu viral, gestion de communautés sur Instagram, TikTok, LinkedIn et Facebook. Croissance organique garantie.</p>
-      
     </div>
     <div class="srv-card reveal d2">
       <span class="srv-icon">💻</span>
       <h3>Développement Web</h3>
       <p>Sites web modernes et applications web performantes avec Django, PHP, Python. Design soigné, SEO optimisé et expérience utilisateur irréprochable.</p>
-      
     </div>
     <div class="srv-card reveal d3">
       <span class="srv-icon">📲</span>
       <h3>Application Mobile</h3>
       <p>Applications iOS et Android avec Flutter. De la maquette à la publication sur les stores, je gère l'intégralité de votre projet mobile.</p>
-      
     </div>
-    
-    
     <div class="srv-card reveal d2">
       <span class="srv-icon">📊</span>
       <h3>Stratégie Digitale</h3>
@@ -128,7 +124,6 @@
       <span class="srv-icon">🚀</span>
       <h3>Branding & Identité</h3>
       <p>Création et refonte de votre identité visuelle : logo, charte graphique, templates réseaux sociaux. Un branding mémorable qui vous démarque.</p>
-     
     </div>
   </div>
 </section>
@@ -192,14 +187,11 @@
     <p class="sec-desc reveal" style="margin:0 auto">Vous avez un projet en tête ? Je serais ravie d'en discuter avec vous. N'hésitez pas à me contacter.</p>
     <a href="mailto:aichatoubiosanna46@gmail.com" class="c-email reveal">✉ aichatoubiosanna46@gmail.com</a>
     <div class="soc reveal">
-      
       <a href="https://www.linkedin.com/in/aichatoubiosanna?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="sb">in</a>
       <a href="https://www.facebook.com/samsiath.mora.5" class="sb">f</a>
-      <a href="https://wa.me/229 01 54 49 91 71?text=Bonjour%2C%20j%E2%80%99ai%20vu%20votre%20portfolio%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20en%20d%C3%A9veloppement%20web%20et%20community%20management.%20J%E2%80%99aimerais%20en%20savoir%20plus." target="_blank" class="sb whatsapp">Wa</a>
-   
-</a>
+      <a href="https://wa.me/22901544991 71?text=Bonjour%2C%20j%E2%80%99ai%20vu%20votre%20portfolio%20et%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20vos%20services%20en%20d%C3%A9veloppement%20web%20et%20community%20management.%20J%E2%80%99aimerais%20en%20savoir%20plus." target="_blank" class="sb whatsapp">Wa</a>
     </div>
-    <p style="margin-top:2rem;color:var(--muted);font-size:.82rem;text-align:center" class="reveal">Ou appelez-moi directement : <strong style="color:var(--white)">+224 01 54 49 91 71</strong></p>
+    <p style="margin-top:2rem;color:var(--muted);font-size:.82rem;text-align:center" class="reveal">Ou appelez-moi directement : <strong style="color:var(--white)">+229 01 54 49 91 71</strong></p>
   </div>
 </section>
 
@@ -208,82 +200,79 @@
 </footer>
 
 <script>
-// Load image
-
+// Load images
 document.getElementById('myPhoto').src = "1.jpeg";
 document.getElementById('aboutPhoto').src = "1.jpeg";
 document.getElementById('aboutPhoto').style.height = '440px';
 
 // Progress bar
-window.addEventListener('scroll',()=>{
-  const s=document.documentElement,r=s.scrollTop,h=s.scrollHeight-s.clientHeight;
-  document.getElementById('pb').style.width=(r/h*100)+'%';
+window.addEventListener('scroll', () => {
+  const s = document.documentElement, r = s.scrollTop, h = s.scrollHeight - s.clientHeight;
+  document.getElementById('pb').style.width = (r / h * 100) + '%';
 });
 
 // Cursor glow
-const cg=document.getElementById('cg');
-document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+const cg = document.getElementById('cg');
+document.addEventListener('mousemove', e => { cg.style.left = e.clientX + 'px'; cg.style.top = e.clientY + 'px'; });
 
 // Reveal on scroll
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // Counter
-function animCount(el){
-  const target=+el.dataset.target,dur=1800;
-  let start=null;
-  function step(ts){
-    if(!start)start=ts;
-    const p=Math.min((ts-start)/dur,1);
-    el.textContent=Math.floor(p*target);
-    if(p<1)requestAnimationFrame(step);
+function animCount(el) {
+  const target = +el.dataset.target, dur = 1800;
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / dur, 1);
+    el.textContent = Math.floor(p * target);
+    if (p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
-const co=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){animCount(e.target);co.unobserve(e.target)}});
-},{threshold:.5});
-document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); co.unobserve(e.target); } });
+}, { threshold: .5 });
+document.querySelectorAll('.counter').forEach(el => co.observe(el));
 
 // Filter buttons
-document.querySelectorAll('.fb').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.fb').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
-</script>
 
-<script>
+// Burger menu
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
-if(burger){
+if (burger) {
   burger.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
     const spans = burger.querySelectorAll('span');
-    if(mobileMenu.classList.contains('open')){
-      spans[0].style.transform='translateY(7px) rotate(45deg)';
-      spans[1].style.opacity='0';
-      spans[2].style.transform='translateY(-7px) rotate(-45deg)';
+    if (mobileMenu.classList.contains('open')) {
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
     } else {
-      spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
+      spans[0].style.transform = ''; spans[1].style.opacity = '1'; spans[2].style.transform = '';
     }
   });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
     const spans = burger.querySelectorAll('span');
-    spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
+    spans[0].style.transform = ''; spans[1].style.opacity = '1'; spans[2].style.transform = '';
   }));
- 
 }
-</script>
-<script>
-  function scrollTo(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    history.replaceState(null, '', ' '); // efface le # de l'URL
-  }
+
+// Scroll sans ancre dans l'URL
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  history.replaceState(null, '', ' ');
+}
 </script>
 </body>
 </html>
