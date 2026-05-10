@@ -276,6 +276,13 @@ if(burger){
     const spans = burger.querySelectorAll('span');
     spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
   }));
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function () {
+    setTimeout(() => {
+      history.replaceState(null, null, window.location.pathname);
+    }, 500);
+  });
+});
 }
 </script>
 </body>
