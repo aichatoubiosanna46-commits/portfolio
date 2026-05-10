@@ -27,11 +27,11 @@
   </button>
 </nav>
 <ul id="mobile-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,14,46,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;list-style:none;z-index:99">
-  <li><a href="#about" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">À propos</a></li>
-  <li><a href="#services" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Services</a></li>
-  <li><a href="#portfolio" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Projets</a></li>
-  <li><a href="#process" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Processus</a></li>
-  <li><a href="#contact" style="font-size:1.4rem;color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.05em">Contact</a></li>
+<li><a onclick="scrollToSection('about')" style="cursor:pointer">À propos</a></li>
+<li><a onclick="scrollToSection('services')" style="cursor:pointer">Services</a></li>
+<li><a onclick="scrollToSection('portfolio')" style="cursor:pointer">Projets</a></li>
+<li><a onclick="scrollToSection('process')" style="cursor:pointer">Processus</a></li>
+<li><a onclick="scrollToSection('contact')" style="cursor:pointer">Contact</a></li>
 </ul>
 
 <section id="hero">
@@ -276,23 +276,14 @@ if(burger){
     const spans = burger.querySelectorAll('span');
     spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
   }));
- document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
-
-    e.preventDefault(); // évite le # direct dans l’URL
-
-    const targetId = this.getAttribute("href");
-    const target = document.querySelector(targetId);
-
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-
-    // enlève le # de l’URL
-    history.replaceState(null, null, window.location.pathname);
-  });
-});
+ 
 }
+</script>
+<script>
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    history.replaceState(null, '', ' '); // efface le # de l'URL
+  }
 </script>
 </body>
 </html>
