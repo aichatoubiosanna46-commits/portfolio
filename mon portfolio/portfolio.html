@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Community Manager & Développeuse Web & Mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="portfolio.css" rel="stylesheet">
+</head>
+<body>
+<div id="pb"></div>
+<div class="cursor-glow" id="cg"></div>
+
+<nav>
+  <div class="logo">Aichatou<span>.</span>Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Projets</a></li>
+    <li><a href="#process">Processus</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button id="burger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;z-index:200;padding:4px">
+    <span style="display:block;width:24px;height:2px;background:white;transition:all .3s;border-radius:2px"></span>
+    <span style="display:block;width:24px;height:2px;background:white;transition:all .3s;border-radius:2px"></span>
+    <span style="display:block;width:24px;height:2px;background:white;transition:all .3s;border-radius:2px"></span>
+  </button>
+</nav>
+<ul id="mobile-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,14,46,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;list-style:none;z-index:99">
+  <li><a href="#about" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">À propos</a></li>
+  <li><a href="#services" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Services</a></li>
+  <li><a href="#portfolio" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Projets</a></li>
+  <li><a href="#process" style="font-size:1.4rem;color:white;text-decoration:none;font-weight:600;letter-spacing:.05em">Processus</a></li>
+  <li><a href="#contact" style="font-size:1.4rem;color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.05em">Contact</a></li>
+</ul>
+
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-badge"> Disponible pour nouveaux projets</div>
+    <h1 class="hero-title">
+      Community<br>Manager &amp;<br><em>Développeuse</em><br><span class="gl">Web &amp; Mobile</span>
+    </h1>
+    <p class="hero-desc">Je transforme votre présence digitale en une expérience inoubliable  entre stratégie de contenu percutante et développement d'applications sur mesure.</p>
+    <div class="hero-tags">
+      <span class="tag">Python / Django</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">Social Media</span>
+      <span class="tag">Branding</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#portfolio" class="btn-p">Voir mes projets ↗</a>
+      <a href="#contact" class="btn-o">Me contacter</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="photo-ring">
+      <div class="sc top"><strong>2+</strong>Projets livrés</div>
+      <div class="sc mid"><strong>50%</strong>Satisfaction</div>
+      <img class="photo-img" id="myPhoto" src="1.jpeg" alt="Photo de profil" >
+        <div class="pb2">5 mois<br>d'expérience</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="si"><div class="sn"><span class="counter" data-target="2">0</span><span>+</span></div><div class="sl">Projets livrés</div></div>
+  <div class="si"><div class="sn"><span class="counter" data-target="3">0</span><span>+</span></div><div class="sl">Clients satisfaits</div></div>
+  <div class="si"><div class="sn"><span class="counter" data-target="5">0</span><span>mois</span></div><div class="sl">D'expérience</div></div>
+  <div class="si"><div class="sn"><span class="counter" data-target="50">0</span><span>%</span></div><div class="sl">Taux de satisfaction</div></div>
+</div>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <img id="aboutPhoto" alt="Profil" style="background:linear-gradient(135deg,#1845d4,#0d1c52)">
+      <div class="about-overlay"></div>
+      <div class="about-badge"> Community Manager & Dev Web/Mobile</div>
+    </div>
+    <div class="about-content">
+      <div class="sec-label reveal">À propos de moi</div>
+      <h2 class="sec-title reveal">Passionnée par le <em>digital</em> sous toutes ses formes</h2>
+      <p class="about-hl reveal">Je suis une professionnelle polyvalente alliant créativité stratégique et expertise technique. Ma double compétence me permet de concevoir des solutions digitales complètes, de la gestion de communautés jusqu'au développement d'applications web et mobile.</p>
+      <div class="reveal">
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:1rem">Avec 5 mois d'expérience, j'accompagne marques et entrepreneurs à construire une présence digitale forte, cohérente et impactante.</p>
+        <div class="skill-tags">
+          <span class="sp">Linkdln</span><span class="sp">Python</span><span class="sp">Flutter</span><span class="sp">PHP</span>
+          <span class="sp">Facebook</span><span class="sp">Instagram</span><span class="sp">Figma</span><span class="sp">Github</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn-p reveal" style="width:fit-content">Travaillons ensemble →</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="sec-label reveal">Mes services</div>
+  <h2 class="sec-title reveal">Ce que je peux faire <em>pour vous</em></h2>
+  <p class="sec-desc reveal">Des solutions digitales complètes, du concept à la livraison, avec une approche créative et méthodique.</p>
+  <div class="srv-grid">
+    <div class="srv-card reveal d1">
+      <span class="srv-icon">📱</span>
+      <h3>Community Management</h3>
+      <p>Stratégie éditoriale, création de contenu viral, gestion de communautés sur Instagram, TikTok, LinkedIn et Facebook. Croissance organique garantie.</p>
+      
+    </div>
+    <div class="srv-card reveal d2">
+      <span class="srv-icon">💻</span>
+      <h3>Développement Web</h3>
+      <p>Sites web modernes et applications web performantes avec Django, PHP, Python. Design soigné, SEO optimisé et expérience utilisateur irréprochable.</p>
+      
+    </div>
+    <div class="srv-card reveal d3">
+      <span class="srv-icon">📲</span>
+      <h3>Application Mobile</h3>
+      <p>Applications iOS et Android avec Flutter. De la maquette à la publication sur les stores, je gère l'intégralité de votre projet mobile.</p>
+      
+    </div>
+    
+    
+    <div class="srv-card reveal d2">
+      <span class="srv-icon">📊</span>
+      <h3>Stratégie Digitale</h3>
+      <p>Audit de votre présence en ligne, définition d'une roadmap sur mesure, accompagnement dans votre transformation digitale avec des KPIs clairs.</p>
+      <div class="srv-more">En savoir plus →</div>
+    </div>
+    <div class="srv-card reveal d3">
+      <span class="srv-icon">🚀</span>
+      <h3>Branding & Identité</h3>
+      <p>Création et refonte de votre identité visuelle : logo, charte graphique, templates réseaux sociaux. Un branding mémorable qui vous démarque.</p>
+     
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="sec-label reveal">Mes projets</div>
+  <h2 class="sec-title reveal">Travaux <em>récents</em></h2>
+  <div class="port-filter reveal">
+    <button class="fb active">Tous</button>
+    <button class="fb">Web</button>
+    <button class="fb">Mobile</button>
+    <button class="fb">Social Media</button>
+    <button class="fb">Branding</button>
+  </div>
+  <div class="port-grid reveal">
+    <div class="pi wide"><div class="pi-bg c1">🛍️</div><div class="pi-ov"><h4>E-commerce FashionLux</h4><p>Next.js · Stripe · Tailwind CSS</p></div></div>
+    <div class="pi tall"><div class="pi-bg c2">📱</div><div class="pi-ov"><h4>App Livraison FoodFast</h4><p>Flutter · Firebase · Maps API</p></div></div>
+    <div class="pi"><div class="pi-bg c3">🎨</div><div class="pi-ov"><h4>Branding BeautyX</h4><p>Figma · Illustrator · Strategy</p></div></div>
+    <div class="pi"><div class="pi-bg c4">📊</div><div class="pi-ov"><h4>Dashboard Analytics</h4><p>React · D3.js · Node.js</p></div></div>
+    <div class="pi wide"><div class="pi-bg c5">🌐</div><div class="pi-ov"><h4>Site Vitrine Cabinet Juridique</h4><p>Next.js · SEO · Animation GSAP</p></div></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="sec-label reveal">Mon processus</div>
+  <h2 class="sec-title reveal">Comment je <em>travaille</em></h2>
+  <div class="proc">
+    <div class="step reveal d1"><div class="step-n">1</div><h3>Découverte</h3><p>Analyse de vos besoins, objectifs et contexte. Audit de l'existant et définition du scope du projet.</p></div>
+    <div class="step reveal d2"><div class="step-n">2</div><h3>Stratégie</h3><p>Élaboration d'une roadmap claire avec des jalons précis, livrables définis et timeline réaliste.</p></div>
+    <div class="step reveal d3"><div class="step-n">3</div><h3>Création</h3><p>Design, développement et production de contenu avec des itérations régulières et votre validation.</p></div>
+    <div class="step reveal d4"><div class="step-n">4</div><h3>Livraison</h3><p>Mise en ligne, formation et suivi post-lancement pour garantir le succès de votre projet digital.</p></div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="sec-label reveal">Témoignages</div>
+  <h2 class="sec-title reveal">Ce que disent <em>mes clients</em></h2>
+  <div class="test-grid">
+    <div class="tc reveal d1">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Un travail exceptionnel ! Notre application mobile a été livrée dans les délais avec une qualité au-delà de nos attentes. Je recommande vivement."</p>
+      <div class="tc-author"><div class="av">AK</div><div><div class="av-name">Aminata Kouyaté</div><div class="av-role">CEO, StartupTech Mali</div></div></div>
+    </div>
+    <div class="tc reveal d2">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Notre communauté Instagram a triplé en 3 mois ! La stratégie de contenu mise en place est parfaitement alignée avec notre identité de marque."</p>
+      <div class="tc-author"><div class="av">MB</div><div><div class="av-name">Moussa Bah</div><div class="av-role">Fondateur, BrandAgency</div></div></div>
+    </div>
+    <div class="tc reveal d3">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Notre site web est magnifique, rapide et SEO-friendly. Les résultats ont été immédiats avec une hausse de 60% du trafic organique dès le premier mois."</p>
+      <div class="tc-author"><div class="av">FD</div><div><div class="av-name">Fatoumata Diallo</div><div class="av-role">Directrice, Cabinet FD</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label reveal" style="justify-content:center">Contact</div>
+  <h2 class="sec-title reveal">Démarrons votre <em>projet</em></h2>
+  <div class="contact-wrap">
+    <p class="sec-desc reveal" style="margin:0 auto">Vous avez un projet en tête ? Je serais ravie d'en discuter avec vous. N'hésitez pas à me contacter.</p>
+    <a href="mailto:aichatoubiosanna46@gmail.com" class="c-email reveal">✉ aichatoubiosanna46@gmail.com</a>
+    <div class="soc reveal">
+      
+      <a href="https://www.linkedin.com/in/aichatoubiosanna?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="sb">in</a>
+      <a href="https://www.facebook.com/samsiath.mora.5" class="sb">f</a>
+    </div>
+    <p style="margin-top:2rem;color:var(--muted);font-size:.82rem;text-align:center" class="reveal">Ou appelez-moi directement : <strong style="color:var(--white)">+224 01 54 49 91 71</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p>Conçu par <span>Aichatou BIO SANNA</span> · 2026 · Tous droits réservés</p>
+</footer>
+
+<script>
+// Load image
+
+document.getElementById('myPhoto').src = "1.jpeg";
+document.getElementById('aboutPhoto').src = "1.jpeg";
+document.getElementById('aboutPhoto').style.height = '440px';
+
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement,r=s.scrollTop,h=s.scrollHeight-s.clientHeight;
+  document.getElementById('pb').style.width=(r/h*100)+'%';
+});
+
+// Cursor glow
+const cg=document.getElementById('cg');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Counter
+function animCount(el){
+  const target=+el.dataset.target,dur=1800;
+  let start=null;
+  function step(ts){
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    el.textContent=Math.floor(p*target);
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){animCount(e.target);co.unobserve(e.target)}});
+},{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+
+// Filter buttons
+document.querySelectorAll('.fb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+
+<script>
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+if(burger){
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const spans = burger.querySelectorAll('span');
+    if(mobileMenu.classList.contains('open')){
+      spans[0].style.transform='translateY(7px) rotate(45deg)';
+      spans[1].style.opacity='0';
+      spans[2].style.transform='translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    const spans = burger.querySelectorAll('span');
+    spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
+  }));
+}
+</script>
+</body>
+</html>
