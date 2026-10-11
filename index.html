@@ -4,56 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio Aichatou BIO SANNA</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="portfolio.css" rel="stylesheet">
 <style>
 /* ── Services mis à jour ── */
 .srv-tag{display:inline-block;background:rgba(196,168,76,.13);border:1px solid rgba(196,168,76,.3);color:#e8c96b;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.24rem .7rem;border-radius:50px;margin-bottom:.85rem}
 .srv-more{display:inline-flex;align-items:center;gap:.35rem;color:var(--royal-light);font-size:.8rem;font-weight:600;margin-top:1rem;transition:gap .3s}
 .srv-card:hover .srv-more{gap:.6rem}
-.srv-branding-thumb{width:100%;height:96px;border-radius:10px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:linear-gradient(135deg,rgba(24,69,212,.28),rgba(196,168,76,.18));border:1px dashed rgba(196,168,76,.28);transition:transform .4s}
-.srv-card:hover .srv-branding-thumb{transform:scale(1.04)}
 .srv-card p strong{color:var(--royal-light);font-weight:600}
 @media(max-width:768px){#services .srv-grid{grid-template-columns:1fr!important}}
+section{scroll-margin-top:70px}
+.sn .unit{margin-left:.45rem;font-size:1.3rem}
+
+/* ═══ NOUVEAU HEADER (menu flottant) ═══ */
+:root{--wx-line:rgba(255,255,255,.1);--wx-serif:'Fraunces',Georgia,serif}
+.wx-nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:.4rem;padding:.45rem .5rem .45rem 1.2rem;border-radius:999px;background:rgba(10,16,48,.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--wx-line);box-shadow:0 10px 40px rgba(0,0,0,.35);max-width:calc(100vw - 24px)}
+.wx-logo{font-family:var(--wx-serif);font-weight:900;font-size:1.15rem;margin-right:.8rem;white-space:nowrap;color:#fff;text-decoration:none}
+.wx-logo b{color:var(--gold-light)}
+.wx-links{display:flex;gap:.1rem;list-style:none}
+.wx-links a{display:block;white-space:nowrap;padding:.5rem .95rem;border-radius:999px;font-size:.86rem;font-weight:500;color:var(--muted);text-decoration:none;transition:.25s}
+.wx-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.wx-links a.on{color:#fff;background:rgba(59,104,249,.28)}
+.wx-hire{display:inline-flex;align-items:center;padding:.55rem 1.1rem;border-radius:999px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#1a1405;font-weight:700;font-size:.85rem;white-space:nowrap;text-decoration:none;transition:.25s}
+.wx-hire:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,201,107,.4)}
+.wx-i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.wx-burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--wx-line);background:rgba(255,255,255,.06);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;transition:.3s}
+.wx-burger span{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:transform .35s,background .3s}
+.wx-burger.on{background:var(--gold-light);border-color:var(--gold-light)}
+.wx-burger.on span{background:#1a1405}
+.wx-burger.on span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.wx-burger.on span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+/* Menu mobile : panneau qui s'ouvre depuis le bouton */
+.wx-sheet{position:fixed;inset:0;z-index:190;display:flex;flex-direction:column;justify-content:center;padding:6.5rem 9vw 2rem;
+  background:radial-gradient(520px circle at 100% 0%,rgba(24,69,212,.5),transparent 60%),radial-gradient(460px circle at 0% 100%,rgba(201,168,76,.22),transparent 60%),rgba(5,8,28,.97);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  clip-path:circle(0% at calc(100% - 40px) 36px);visibility:hidden;transition:clip-path .65s cubic-bezier(.7,0,.2,1),visibility 0s .65s}
+.wx-sheet.open{clip-path:circle(150% at calc(100% - 40px) 36px);visibility:visible;transition:clip-path .65s cubic-bezier(.7,0,.2,1),visibility 0s}
+.wx-sheet-in{max-width:460px;width:100%;margin:0 auto}
+.wx-sheet-label{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.1rem;opacity:0;transition:.4s}
+.wx-sl{display:flex;align-items:baseline;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--wx-line);font-family:var(--wx-serif);font-size:clamp(1.7rem,8vw,2.3rem);font-weight:700;color:#fff;text-decoration:none;opacity:0;transform:translateY(26px);transition:opacity .5s,transform .5s,color .25s,padding-left .25s}
+.wx-sl i{font-family:ui-monospace,Menlo,monospace;font-style:normal;font-size:.72rem;font-weight:400;color:var(--gold-light);letter-spacing:.1em}
+.wx-sl:hover,.wx-sl:active{color:var(--gold-light);padding-left:.5rem}
+.wx-sl.gold{color:var(--gold-light);border-bottom-color:rgba(232,201,107,.35)}
+.wx-sheet-foot{margin-top:2rem;display:grid;gap:1.1rem;opacity:0;transform:translateY(26px);transition:opacity .5s,transform .5s}
+.wx-sheet-wa{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.95rem 1.2rem;border-radius:999px;background:#25d366;color:#04210f;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(37,211,102,.35)}
+.wx-sheet-wa .wx-i{font-size:1.25rem}
+.wx-sheet-soc{display:flex;justify-content:center;gap:.7rem;margin-top:2rem}
+.wx-sheet-soc a{width:46px;height:46px;border-radius:50%;border:1px solid var(--wx-line);background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;transition:.3s}
+.wx-sheet-soc a:hover{background:var(--royal);border-color:var(--royal)}
+.wx-sheet.open .wx-sheet-label{opacity:1;transition-delay:.25s}
+.wx-sheet.open .wx-sl{opacity:1;transform:none}
+.wx-sheet.open .wx-sl:nth-of-type(1){transition-delay:.3s}.wx-sheet.open .wx-sl:nth-of-type(2){transition-delay:.38s}
+.wx-sheet.open .wx-sl:nth-of-type(3){transition-delay:.46s}.wx-sheet.open .wx-sl:nth-of-type(4){transition-delay:.54s}
+.wx-sheet.open .wx-sl:nth-of-type(5){transition-delay:.62s}
+.wx-sheet.open .wx-sheet-foot{opacity:1;transform:none;transition-delay:.72s}
+@media(max-width:900px){.wx-links a{padding:.5rem .7rem;font-size:.8rem}.wx-logo{margin-right:.3rem}}
+@media(max-width:760px){.wx-links,.wx-hire{display:none}.wx-burger{display:flex}.wx-nav{padding:.4rem .4rem .4rem 1.2rem;width:calc(100vw - 24px);justify-content:space-between}}
+
+/* ═══ CARTES PROJETS WEB : image plein cadre + texte lisible ═══ */
+.port-grid .pi[data-url]{position:relative;overflow:hidden;min-height:300px;border-radius:20px;isolation:isolate}
+.port-grid .pi[data-url] .pi-preview{position:absolute;inset:0;z-index:0;overflow:hidden}
+.port-grid .pi[data-url] .pi-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.port-grid .pi[data-url] .pi-tag{position:absolute;top:14px;left:14px;z-index:3}
+.port-grid .pi[data-url] .pi-ov{position:absolute;left:0;right:0;bottom:0;top:auto;z-index:2;padding:3rem 1.3rem 1.2rem;background:linear-gradient(to top,rgba(5,8,28,.95) 0%,rgba(5,8,28,.7) 55%,rgba(5,8,28,0) 100%);opacity:1;transform:none}
+.port-grid .pi[data-url] .pi-ov h4{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.port-grid .pi[data-url] .pi-ov p{color:rgba(255,255,255,.8)}
+@media(max-width:760px){.port-grid .pi[data-url]{min-height:260px}}
+
+/* ═══ HERO : le menu flottant ne doit pas couvrir le titre ═══ */
+#hero{height:auto!important;min-height:100vh;padding-top:8rem!important;padding-bottom:4rem}
+.hero-title{font-size:clamp(2.6rem,6.2vw,5rem)!important;line-height:1.05}
+@media(max-width:760px){#hero{padding-top:7rem!important}}
+
+/* ═══ GRILLE PROJETS : cartes égales côte à côte ═══ */
+.port-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;grid-auto-rows:auto!important;gap:1.4rem}
+.port-grid .pi{grid-column:auto!important;grid-row:auto!important}
+.port-grid .pi.hidden{display:none!important}
 </style>
 </head>
 <body>
 
 <div id="pb"></div>
 <div class="cursor-glow" id="cg"></div>
-
-<!-- ══ MODAL APERÇU WEB ══ -->
-<div id="previewModal" class="preview-modal" onclick="closePreview(event)">
-  <div class="preview-box" onclick="event.stopPropagation()">
-    <div class="preview-header">
-      <div class="preview-meta">
-        <div class="preview-title" id="previewTitle">—</div>
-        <div class="preview-url" id="previewUrl">—</div>
-      </div>
-      <div class="preview-actions">
-        <a id="previewOpen" class="preview-open" href="#" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Ouvrir le site
-        </a>
-        <button class="preview-close" onclick="closePreview()">✕</button>
-      </div>
-    </div>
-    <div class="preview-frame-wrap">
-      <div class="preview-loading-bar" id="previewLoader">
-        <div class="preview-spinner-bar"></div>
-        <span>Chargement de l'aperçu…</span>
-      </div>
-      <img id="previewShot" class="preview-screenshot" src="" alt="Aperçu du site">
-      <iframe id="previewIframe" class="preview-iframe"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-      <div class="preview-blocked" id="previewBlocked">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-        Ce site bloque l'affichage en iframe.<br>
-        <a id="previewFallbackLink" href="#" target="_blank" rel="noopener" style="color:var(--royal-light);font-weight:600;margin-top:.5rem">Ouvrir dans un nouvel onglet →</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ══ LIGHTBOX BRANDING ══ -->
 <div id="lbModal" class="lb-modal" onclick="closeLightbox(event)">
@@ -70,34 +103,41 @@
   </div>
 </div>
 
-<!-- ══ NAV ══ -->
-<nav>
-  <div class="logo">Aicha<span>.</span></div>
-  <ul class="nav-links">
-    <li><a onclick="scrollTo('about')">À propos</a></li>
-    <li><a onclick="scrollTo('services')">Services</a></li>
-    <li><a onclick="scrollTo('portfolio')">Projets</a></li>
-    <li><a onclick="scrollTo('process')">Processus</a></li>
-    <li><a onclick="scrollTo('contact')" class="nav-cta">Contact</a></li>
+<!-- ══ ENTÊTE ══ -->
+<div class="wx-nav" role="navigation">
+  <a href="#hero" class="wx-logo">Aïchatou<b>.</b></a>
+  <ul class="wx-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Projets</a></li>
+    <li><a href="#process">Méthode</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button id="burger" aria-label="Menu" style="display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;z-index:200;padding:4px">
-    <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s"></span>
-    <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s"></span>
-    <span style="display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s"></span>
-  </button>
-</nav>
-<ul id="mobile-menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(6,14,46,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;list-style:none;z-index:99">
-  <li><a onclick="scrollTo('about')" style="font-size:1.3rem;color:#fff;text-decoration:none;font-weight:600;cursor:pointer">À propos</a></li>
-  <li><a onclick="scrollTo('services')" style="font-size:1.3rem;color:#fff;text-decoration:none;font-weight:600;cursor:pointer">Services</a></li>
-  <li><a onclick="scrollTo('portfolio')" style="font-size:1.3rem;color:#fff;text-decoration:none;font-weight:600;cursor:pointer">Projets</a></li>
-  <li><a onclick="scrollTo('process')" style="font-size:1.3rem;color:#fff;text-decoration:none;font-weight:600;cursor:pointer">Processus</a></li>
-  <li><a onclick="scrollTo('contact')" style="font-size:1.3rem;color:var(--gold);text-decoration:none;font-weight:700;cursor:pointer">Contact</a></li>
-</ul>
+  <a href="#contact" class="wx-hire">Travaillons ensemble</a>
+  <button class="wx-burger" id="wxBurger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+</div>
+<div class="wx-sheet" id="wxSheet" aria-hidden="true">
+  <div class="wx-sheet-in">
+
+    <a class="wx-sl" href="#about"><i></i>À propos</a>
+    <a class="wx-sl" href="#services"><i></i>Services</a>
+    <a class="wx-sl" href="#portfolio"><i></i>Projets</a>
+    <a class="wx-sl" href="#process"><i></i>Méthode</a>
+    <a class="wx-sl gold" href="#contact"><i></i>Contact</a>
+
+    <div class="wx-sheet-soc">
+      <a href="https://www.linkedin.com/in/aichatoubiosanna" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="wx-i" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.facebook.com/samsiath.mora.5" target="_blank" rel="noopener" aria-label="Facebook"><svg class="wx-i" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="mailto:aichatoubiosanna46@gmail.com" aria-label="Email"><svg class="wx-i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+      <a href="tel:+2290154499171" aria-label="Appeler"><svg class="wx-i" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+    </div>
+  </div>
+</div>
 
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-text">
-    <div class="hero-badge"> Disponible pour nouveaux projets</div>
+
     <h1 class="hero-title">Community<br>Manager &amp;<br><em>Développeuse</em><br><span class="gl">Web &amp; Mobile</span></h1>
     <p class="hero-desc">Je transforme votre présence digitale en une expérience inoubliable entre stratégie de contenu percutante et développement d'applications sur mesure.</p>
     <div class="hero-tags">
@@ -109,8 +149,8 @@
       <span class="tag">PYTHON / DJANGO</span>
     </div>
     <div class="hero-btns">
-      <a onclick="scrollTo('portfolio')" class="btn-p">Voir mes projets ↗</a>
-      <a onclick="scrollTo('contact')" class="btn-o">Me contacter</a>
+      <a href="#portfolio" class="btn-p">Voir mes projets ↗</a>
+      <a href="#contact" class="btn-o">Me contacter</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -118,7 +158,7 @@
       <div class="sc top"><strong>2+</strong>Projets livrés</div>
       <div class="sc mid"><strong>98%</strong>Satisfaction</div>
       <img class="photo-img" id="myPhoto" src="1.jpeg" alt="Aichatou BIO SANNA">
-      <div class="pb2">5 mois<br>d'expérience</div>
+      <div class="pb2">5 mois +<br>d'expérience</div>
     </div>
   </div>
 </section>
@@ -127,7 +167,7 @@
 <div class="stats-bar">
   <div class="si"><div class="sn"><span class="counter" data-target="2">0</span><span>+</span></div><div class="sl">Projets livrés</div></div>
   <div class="si"><div class="sn"><span class="counter" data-target="3">0</span><span>+</span></div><div class="sl">Clients satisfaits</div></div>
-  <div class="si"><div class="sn"><span class="counter" data-target="5">0</span><span>mois</span></div><div class="sl">D'expérience</div></div>
+  <div class="si"><div class="sn"><span class="counter" data-target="5">0</span><span class="unit">mois +</span></div><div class="sl">D'expérience</div></div>
   <div class="si"><div class="sn"><span class="counter" data-target="98">0</span><span>%</span></div><div class="sl">Taux de satisfaction</div></div>
 </div>
 
@@ -137,53 +177,51 @@
     <div class="about-img-wrap reveal">
       <img id="aboutPhoto" src="1.jpeg" alt="Aichatou BIO SANNA" style="height:440px;object-fit:cover;object-position:top">
       <div class="about-overlay"></div>
-      <div class="about-badge"> Community Manager & Dev Web/Mobile</div>
+      <div class="about-badge"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Community Manager &amp; Dev Web/Mobile</div>
     </div>
     <div class="about-content">
       <div class="sec-label reveal">À propos de moi</div>
       <h2 class="sec-title reveal">Passionnée par le <em>digital</em> sous toutes ses formes</h2>
       <p class="about-hl reveal">Je suis une professionnelle polyvalente alliant créativité stratégique et expertise technique. Ma double compétence me permet de concevoir des solutions digitales complètes, de la gestion de communautés jusqu'au développement d'applications web et mobile.</p>
       <div class="reveal">
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:1rem">Avec 5 mois d'expérience, j'accompagne marques et entrepreneurs à construire une présence digitale forte, cohérente et impactante.</p>
+        <p style="color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:1rem">Avec 5 mois + d'expérience, j'accompagne marques et entrepreneurs à construire une présence digitale forte, cohérente et impactante.</p>
         <div class="skill-tags">
           <span class="sp">LinkedIn</span><span class="sp">Python</span><span class="sp">Flutter</span><span class="sp">PHP</span>
           <span class="sp">Facebook</span><span class="sp">Github</span>
         </div>
       </div>
-      <a onclick="scrollTo('contact')" class="btn-p reveal" style="width:fit-content">Travaillons ensemble →</a>
+      <a href="#contact" class="btn-p reveal" style="width:fit-content">Travaillons ensemble →</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     SERVICES — version mise à jour
-══════════════════════════════════ -->
+<!-- ══ SERVICES ══ -->
 <section id="services">
   <div class="sec-label reveal">Mes services</div>
   <h2 class="sec-title reveal">Ce que je fais <em>pour vous</em></h2>
-  <p class="sec-desc reveal">Community Manager et développeuse web — je combine créativité digitale et savoir-faire technique pour propulser votre présence en ligne.</p>
+  <p class="sec-desc reveal">Community Manager et développeuse web, je combine créativité digitale et savoir-faire technique pour propulser votre présence en ligne.</p>
 
   <div class="srv-grid" style="grid-template-columns:repeat(2,1fr)">
 
     <!-- 1. Community Management -->
     <div class="srv-card reveal d1">
       <span class="srv-tag">Community Management</span>
-      <span class="srv-icon">📣</span>
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
       <h3>Gestion des Réseaux Sociaux</h3>
-      <p>Gestion quotidienne de vos pages <strong>LinkedIn</strong> et <strong>Facebook</strong> — stratégie éditoriale, calendrier de publication, contenus engageants et interaction avec votre communauté.</p>
+      <p>Gestion quotidienne de vos pages <strong>LinkedIn</strong> et <strong>Facebook</strong> : stratégie éditoriale, calendrier de publication, contenus engageants et interaction avec votre communauté.</p>
       <div class="srv-more">En savoir plus →</div>
     </div>
 
     <!-- 2. Publicité / Ads -->
     <div class="srv-card reveal d2">
       <span class="srv-tag">Publicité Digitale</span>
-      <span class="srv-icon">🎯</span>
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <h3>Publicité & Ads</h3>
-      <p>Campagnes sur <strong>Facebook Ads</strong> et <strong>LinkedIn Ads</strong> — ciblage précis, visuels percutants et suivi des performances pour maximiser votre retour sur investissement.</p>
+      <p>Campagnes sur <strong>Facebook Ads</strong> : ciblage précis, visuels percutants et suivi des performances pour maximiser votre retour sur investissement.</p>
       <div class="srv-more">En savoir plus →</div>
     </div>
 
-    <!-- 3. Branding — clique ouvre la lightbox existante -->
+    <!-- 3. Branding -->
     <div class="srv-card reveal d3"
          style="cursor:pointer"
          data-images="branding/img1.jpg|branding/img2.jpg|branding/img3.jpg|branding/nina1.jpg|branding/nina2.jpg"
@@ -191,7 +229,7 @@
          data-gallery-title="Branding & Identité Visuelle"
          onclick="openGallery(this)">
       <span class="srv-tag">Identité Visuelle</span>
-      <div class="srv-branding-thumb">🎨</div>
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.6-10-8.6z"/></svg></div>
       <h3>Branding & Identité Visuelle
         <span style="font-size:.72rem;color:var(--gold);margin-left:.4rem;font-family:'DM Sans',sans-serif;font-weight:600">↗ voir les créations</span>
       </h3>
@@ -200,20 +238,18 @@
     </div>
 
     <!-- 4. Développement Web -->
-    <div class="srv-card reveal" style="transition-delay:.4s">
+    <a class="srv-card reveal" href="#portfolio" style="transition-delay:.4s;text-decoration:none;color:inherit">
       <span class="srv-tag">Développement</span>
-      <span class="srv-icon">💻</span>
+      <div class="srv-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
       <h3>Développement Web</h3>
-      <p>Sites vitrines, landing pages et annuaires avec <strong>HTML / CSS / JS</strong> et <strong>PHP / MySQL</strong>. Des projets réels, livrés et en ligne — visibles dans mes travaux.</p>
+      <p>Sites vitrines, landing pages et plateformes avec <strong>HTML / CSS / JS</strong> et <strong>PHP / MySQL</strong>. Des projets réels, livrés et en ligne, visibles dans mes travaux.</p>
       <div class="srv-more">Voir mes projets →</div>
-    </div>
+    </a>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     PORTFOLIO
-══════════════════════════════════ -->
+<!-- ══ PORTFOLIO ══ -->
 <section id="portfolio">
   <div class="sec-label reveal">Mes projets</div>
   <h2 class="sec-title reveal">Travaux <em>récents</em></h2>
@@ -221,114 +257,80 @@
   <div class="port-filter reveal">
     <button class="fb active" data-filter="all">Tous</button>
     <button class="fb" data-filter="web">Web</button>
-    <button class="fb" data-filter="social">Social Media</button>
-    <button class="fb" data-filter="branding">Branding</button>
+    <button class="fb" data-filter="web">Application</button>
   </div>
 
   <div class="port-grid reveal">
 
-    <div class="pi wide" data-cat="web"
-         data-url="https://landing-flame-three.vercel.app/"
-         data-project-title="Projet fictive landing page"
-         data-tech="HTML · CSS · JS">
+    <!-- Projet web : le clic ouvre directement le site -->
+    <div class="pi" data-cat="web" data-url="https://landing-flame-three.vercel.app/">
       <div class="pi-preview">
         <div class="pi-shimmer" id="shimmer1"><div class="pi-shimmer-ring"></div>Chargement…</div>
-        <img id="shot1" alt="Aperçu landing page" loading="lazy"
-          src="https://image.thum.io/get/width/900/crop/620/https://landing-flame-three.vercel.app/"
+        <img id="shot1" alt="Aperçu landing page" loading="lazy" src="22.png"
           onload="this.classList.add('loaded');document.getElementById('shimmer1').classList.add('hidden')"
-          onerror="this.src='https://s.wordpress.com/mshots/v1/https%3A%2F%2Flanding-flame-three.vercel.app%2F?w=900';this.onerror=function(){document.getElementById('shimmer1').innerHTML='🌐'}">
+          onerror="document.getElementById('shimmer1').innerHTML='<svg width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,.5)\' stroke-width=\'1.6\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg>'">
       </div>
-      <span class="pi-tag">Web</span>
+      <span class="pi-tag"></span>
       <div class="pi-ov">
-        <h4>Projet fictive landing page</h4>
+        <h4>Projet fictif : landing page</h4>
         <p>HTML · CSS · JS</p>
         <div class="pi-btns">
-          <button class="pi-link" onclick="openPreview(this.closest('.pi'))">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>Aperçu
-          </button>
           <a class="pi-link" href="https://landing-flame-three.vercel.app/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ouvrir
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir le site
           </a>
         </div>
       </div>
     </div>
 
-    <div class="pi tall" data-cat="web"
-         data-url="http://ndali-annuaire.infinityfree.me/annuaire/"
-         data-project-title="Site Web Annuaire N'Dali"
-         data-tech="HTML · CSS · PHP · MySQL">
+    <!-- Projet web : le clic ouvre directement le site -->
+    <div class="pi" data-cat="web" data-url="https://arizikilab.com/">
       <div class="pi-preview">
         <div class="pi-shimmer" id="shimmer2"><div class="pi-shimmer-ring"></div>Chargement…</div>
-        <img id="shot2" alt="Aperçu annuaire N'Dali" loading="lazy"
-          src="https://image.thum.io/get/width/900/crop/720/http://ndali-annuaire.infinityfree.me/annuaire/"
+        <img id="shot2" alt="Aperçu Ariziki" loading="lazy" src="23.png"
           onload="this.classList.add('loaded');document.getElementById('shimmer2').classList.add('hidden')"
-          onerror="this.src='https://s.wordpress.com/mshots/v1/http%3A%2F%2Fndali-annuaire.infinityfree.me%2Fannuaire%2F?w=900';this.onerror=function(){document.getElementById('shimmer2').innerHTML='🌐'}">
+          onerror="document.getElementById('shimmer2').innerHTML='<svg width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,.5)\' stroke-width=\'1.6\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg>'">
       </div>
       <span class="pi-tag">Web</span>
       <div class="pi-ov">
-        <h4>Site Web Annuaire N'Dali</h4>
+        <h4>Ariziki : plateforme de formation en ligne</h4>
         <p>HTML · CSS · PHP · MySQL</p>
         <div class="pi-btns">
-          <button class="pi-link" onclick="openPreview(this.closest('.pi'))">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>Aperçu
-          </button>
-          <a class="pi-link" href="http://ndali-annuaire.infinityfree.me/annuaire/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ouvrir
+          <a class="pi-link" href="https://arizikilab.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir le site
           </a>
         </div>
       </div>
     </div>
 
-    <div class="pi" data-cat="branding"
-         data-images="branding/img1.jpg|branding/img2.jpg|branding/img3.jpg"
-         data-captions="Identité visuelle|Charte graphique|Templates réseaux sociaux"
-         data-gallery-title="Branding Fenou Immobilier"
-         onclick="openGallery(this)">
-      <div class="pi-thumb-fallback" style="background:linear-gradient(135deg,#2d1b69,#7c3aed)">🎨</div>
-      <span class="pi-tag">Branding</span>
-      <div class="pi-ov">
-        <h4>Branding Fenou Immobilier</h4>
-        <p>Identité visuelle · Charte graphique · Templates</p>
-        <div class="pi-btns">
-          <button class="pi-link" onclick="openGallery(this.closest('.pi'))">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Voir les visuels
-          </button>
-        </div>
+    <!-- Projet web : le clic ouvre directement le site -->
+    <div class="pi" data-cat="web" data-url="https://arseneporfolio.vercel.app/">
+      <div class="pi-preview">
+        <div class="pi-shimmer" id="shimmer3"><div class="pi-shimmer-ring"></div>Chargement…</div>
+        <img id="shot3" alt="Aperçu portfolio" loading="lazy" src="24.png"
+          onload="this.classList.add('loaded');document.getElementById('shimmer3').classList.add('hidden')"
+          onerror="document.getElementById('shimmer3').innerHTML='<svg width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,.5)\' stroke-width=\'1.6\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg>'">
       </div>
-    </div>
-
-    <div class="pi" data-cat="branding"
-         data-images="branding/nina1.jpg|branding/nina2.jpg"
-         data-captions="Packaging Nina Chips|Flyers promotionnels"
-         data-gallery-title="Branding Nina Chips"
-         onclick="openGallery(this)">
-      <div class="pi-thumb-fallback" style="background:linear-gradient(135deg,#92400e,#f59e0b)">🌟</div>
-      <span class="pi-tag">Branding</span>
+      <span class="pi-tag"></span>
       <div class="pi-ov">
-        <h4>Branding Nina Chips</h4>
-        <p>Packaging · Flyers · Identité</p>
+        <h4>Portfolio : Arsène Gandonou</h4>
+        <p>HTML · CSS · JS</p>
         <div class="pi-btns">
-          <button class="pi-link" onclick="openGallery(this.closest('.pi'))">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Voir les visuels
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="pi wide" data-cat="social">
-      <div class="pi-thumb-fallback" style="background:linear-gradient(135deg,#831843,#db2777)">📸</div>
-      <span class="pi-tag">Social Media</span>
-      <div class="pi-ov">
-        <h4>Stratégie Instagram Rama Bien-être</h4>
-        <p>Contenu · Planning · Croissance organique</p>
-        <div class="pi-btns">
-          <a class="pi-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir
+          <a class="pi-link" href="https://arseneporfolio.vercel.app/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Voir le site
           </a>
         </div>
       </div>
     </div>
 
+  </div>
+
+  <div class="reveal" style="margin-top:2rem;padding:1.6rem 1.8rem;border-radius:20px;border:1px solid rgba(196,168,76,.3);background:rgba(196,168,76,.07);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem">
+    <div style="max-width:620px">
+      <span class="srv-tag">Community Management</span>
+      <h3 style="font-family:'Fraunces',Georgia,serif;font-size:1.3rem;margin-bottom:.4rem">Je lance mes premières missions de CM</h3>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.7">Je prends un nombre limité de projets à tarif de lancement : calendrier éditorial, création de visuels et gestion de vos pages LinkedIn et Facebook. En échange, un retour d'expérience honnête sur notre collaboration.</p>
+    </div>
+    <a href="#contact" class="btn-p">Proposer un projet →</a>
   </div>
 </section>
 
@@ -373,21 +375,37 @@
   <h2 class="sec-title reveal">Démarrons votre <em>projet</em></h2>
   <div class="contact-wrap">
     <p class="sec-desc reveal" style="margin:0 auto">Vous avez un projet en tête ? Je serais ravie d'en discuter. N'hésitez pas à me contacter.</p>
-    <a href="mailto:aichatoubiosanna46@gmail.com" class="c-email reveal">✉ aichatoubiosanna46@gmail.com</a>
+    <a href="mailto:aichatoubiosanna46@gmail.com" class="c-email reveal">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      aichatoubiosanna46@gmail.com
+    </a>
     <div class="soc reveal">
-      <a href="https://www.linkedin.com/in/aichatoubiosanna" target="_blank" rel="noopener" class="sb">in</a>
-      <a href="https://www.facebook.com/samsiath.mora.5" target="_blank" rel="noopener" class="sb">f</a>
-      <a href="https://wa.me/22901544991" target="_blank" rel="noopener" class="sb">Wa</a>
+      <a href="https://www.linkedin.com/in/aichatoubiosanna" target="_blank" rel="noopener" class="sb" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.facebook.com/samsiath.mora.5" target="_blank" rel="noopener" class="sb" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://wa.me/2290154499171" target="_blank" rel="noopener" class="sb" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+      </a>
+      <a href="tel:+2290154499171" class="sb" aria-label="Appeler">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      </a>
     </div>
-    <p style="margin-top:2rem;color:var(--muted);font-size:.82rem;text-align:center" class="reveal">Ou appelez-moi : <strong style="color:var(--white)">+229 01 54 49 91 71</strong></p>
+
   </div>
 </section>
 
 <footer><p>Conçu par <span>Aichatou BIO SANNA</span> · 2026 · Tous droits réservés</p></footer>
 
+<!-- Bouton WhatsApp flottant -->
+<a href="https://wa.me/2290154499171" target="_blank" rel="noopener" class="wa-float" aria-label="Écrire sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+</a>
+
 <script>
 /* ─── Utilitaires ─── */
-function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
 window.addEventListener('scroll',()=>{const s=document.documentElement,r=s.scrollTop,h=s.scrollHeight-s.clientHeight;document.getElementById('pb').style.width=(r/h*100)+'%'});
 const cg=document.getElementById('cg');
 document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
@@ -409,63 +427,17 @@ document.querySelectorAll('.fb').forEach(btn=>{
   });
 });
 
-/* ═══════════════════════════════════════
-   MODAL APERÇU WEB
-═══════════════════════════════════════ */
-const previewModal=document.getElementById('previewModal');
-const previewIframe=document.getElementById('previewIframe');
-const previewShot=document.getElementById('previewShot');
-const previewLoader=document.getElementById('previewLoader');
-const previewBlocked=document.getElementById('previewBlocked');
+/* ─── Projets web : un clic sur la carte ouvre directement le site ─── */
+document.querySelectorAll('.pi[data-url]').forEach(card=>{
+  card.style.cursor='pointer';
+  card.addEventListener('click',e=>{
+    if(e.target.closest('a'))return;
+    window.open(card.dataset.url,'_blank','noopener');
+  });
+});
 
-function openPreview(card){
-  const url=card.dataset.url;
-  const title=card.dataset.projectTitle||'Aperçu';
-  document.getElementById('previewTitle').textContent=title;
-  document.getElementById('previewUrl').textContent=url;
-  document.getElementById('previewOpen').href=url;
-  document.getElementById('previewFallbackLink').href=url;
-  previewLoader.style.display='flex';
-  previewIframe.classList.remove('loaded');
-  previewIframe.style.display='block';
-  previewShot.style.display='none';
-  previewBlocked.style.display='none';
-  const shotUrl='https://image.thum.io/get/width/900/crop/600/'+url;
-  previewShot.src=shotUrl;
-  let iframeTimeout=setTimeout(()=>showScreenshotFallback(),4000);
-  previewIframe.onload=()=>{
-    clearTimeout(iframeTimeout);
-    try{
-      const doc=previewIframe.contentDocument||previewIframe.contentWindow.document;
-      if(!doc||doc.body===null){showScreenshotFallback();return;}
-      previewLoader.style.display='none';
-      previewIframe.classList.add('loaded');
-    }catch(e){showScreenshotFallback();}
-  };
-  previewIframe.onerror=()=>{clearTimeout(iframeTimeout);showScreenshotFallback();};
-  previewIframe.src=url;
-  previewModal.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function showScreenshotFallback(){
-  previewIframe.style.display='none';
-  previewLoader.style.display='none';
-  previewShot.style.display='block';
-  previewShot.onerror=()=>{previewShot.style.display='none';previewBlocked.style.display='flex';};
-}
-
-function closePreview(e){
-  if(e&&e.target!==previewModal)return;
-  previewModal.classList.remove('open');
-  previewIframe.src='about:blank';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePreview();closeLightbox();}});
-
-/* ═══════════════════════════════════════
-   LIGHTBOX BRANDING
-═══════════════════════════════════════ */
+/* ═══ LIGHTBOX BRANDING ═══ */
+const ICON_IMG='<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
 let lbImages=[],lbCaptions=[],lbIndex=0;
 const lbModal=document.getElementById('lbModal');
 const lbCaption=document.getElementById('lbCaption');
@@ -477,7 +449,7 @@ function openGallery(card){
   const rawImages=(card.dataset.images||'').split('|').map(s=>s.trim()).filter(Boolean);
   const rawCaptions=(card.dataset.captions||'').split('|').map(s=>s.trim());
   if(!rawImages.length||rawImages[0]===''){
-    lbImgWrap.innerHTML='<div class="lb-no-img"><span>🖼️</span>Ajoutez vos chemins d\'images<br>dans l\'attribut <code style="color:var(--gold)">data-images</code> de la carte</div>';
+    lbImgWrap.innerHTML='<div class="lb-no-img">'+ICON_IMG+'Ajoutez vos chemins d\'images<br>dans l\'attribut <code style="color:var(--gold)">data-images</code> de la carte</div>';
     lbCaption.textContent='';lbDots.innerHTML='';lbCounter.textContent='';
     lbModal.classList.add('open');document.body.style.overflow='hidden';
     return;
@@ -496,7 +468,7 @@ function renderLb(i){
   img.src=lbImages[i];
   img.onload=()=>{img.style.transition='opacity .3s';img.style.opacity='1'};
   img.onerror=()=>{
-    lbImgWrap.innerHTML='<div class="lb-no-img"><span>🖼️</span>Image non trouvée<br><small style="opacity:.6">'+lbImages[i]+'</small></div>';
+    lbImgWrap.innerHTML='<div class="lb-no-img">'+ICON_IMG+'Image non trouvée<br><small style="opacity:.6">'+lbImages[i]+'</small></div>';
   };
   lbCaption.textContent=lbCaptions[i]||'';
   lbCounter.textContent=(i+1)+' / '+lbImages.length;
@@ -519,6 +491,7 @@ function closeLightbox(e){
   if(e&&e.target!==lbModal)return;
   lbModal.classList.remove('open');document.body.style.overflow='';
 }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
 
 let lbTouchX=null;
 lbModal.addEventListener('touchstart',e=>{lbTouchX=e.touches[0].clientX},{passive:true});
@@ -529,22 +502,24 @@ lbModal.addEventListener('touchend',e=>{
   lbTouchX=null;
 },{passive:true});
 
-/* ─── Burger ─── */
-const burger=document.getElementById('burger');
-const mobileMenu=document.getElementById('mobile-menu');
-if(burger){
-  burger.addEventListener('click',()=>{
-    mobileMenu.classList.toggle('open');
-    const spans=burger.querySelectorAll('span');
-    if(mobileMenu.classList.contains('open')){spans[0].style.transform='translateY(7px) rotate(45deg)';spans[1].style.opacity='0';spans[2].style.transform='translateY(-7px) rotate(-45deg)';}
-    else{spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';}
-  });
-  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    mobileMenu.classList.remove('open');
-    const spans=burger.querySelectorAll('span');
-    spans[0].style.transform='';spans[1].style.opacity='1';spans[2].style.transform='';
-  }));
+/* ─── Entête : menu mobile et lien actif ─── */
+const wxSheet=document.getElementById('wxSheet'),wxBurger=document.getElementById('wxBurger');
+function wxMenu(open){
+  wxSheet.classList.toggle('open',open);wxBurger.classList.toggle('on',open);
+  wxBurger.setAttribute('aria-expanded',open);wxBurger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+  wxSheet.setAttribute('aria-hidden',!open);document.body.style.overflow=open?'hidden':'';
 }
+wxBurger.addEventListener('click',()=>wxMenu(!wxSheet.classList.contains('open')));
+wxSheet.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>wxMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')wxMenu(false)});
+addEventListener('resize',()=>{if(innerWidth>760)wxMenu(false)});
+
+const wxLinks=[...document.querySelectorAll('.wx-links a')];
+const wxSecs=['about','services','portfolio','process','contact'].map(id=>document.getElementById(id));
+addEventListener('scroll',()=>{
+  let cur='';wxSecs.forEach(s=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});
+  wxLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+},{passive:true});
 </script>
 </body>
 </html>

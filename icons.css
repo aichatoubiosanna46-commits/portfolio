@@ -1,0 +1,35 @@
+/* ===== icons.css — à lier APRÈS portfolio.css ===== */
+
+/* Icônes des services (SVG, s'affichent sur tous les téléphones) */
+.srv-ico{width:58px;height:58px;border-radius:16px;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(24,69,212,.35),rgba(196,168,76,.22));
+  border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 22px rgba(24,69,212,.28);transition:transform .4s}
+.srv-ico svg{width:28px;height:28px;stroke:var(--gold-light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.srv-card:hover .srv-ico{transform:translateY(-4px) rotate(-4deg) scale(1.06)}
+
+/* Icônes de contact */
+.sb svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.c-email svg,.c-phone svg{width:18px;height:18px;stroke:var(--gold-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.c-phone{display:inline-flex;align-items:center;gap:.6rem;color:var(--white);text-decoration:none;font-weight:600;font-size:.95rem;margin-top:1.4rem;transition:color .3s}
+.c-phone:hover{color:var(--gold-light)}
+
+/* Bouton WhatsApp flottant */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:120;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(37,211,102,.45);transition:transform .3s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+/* Correction du menu mobile (le style inline le cachait toujours) */
+#mobile-menu.open{display:flex!important}
+
+/* Mobile */
+@media(max-width:768px){
+  .cursor-glow{display:none}
+  .srv-ico{width:52px;height:52px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Icônes à la place des emojis du portfolio */
+.pi-thumb-fallback svg{width:54px;height:54px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
+.srv-ico svg{display:block}
+.lb-no-img svg{width:48px;height:48px;stroke:rgba(255,255,255,.4);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.about-badge svg,.hero-badge svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:.35rem}
