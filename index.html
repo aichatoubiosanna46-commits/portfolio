@@ -81,6 +81,24 @@ section{scroll-margin-top:70px}
 .port-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;grid-auto-rows:auto!important;gap:1.4rem}
 .port-grid .pi{grid-column:auto!important;grid-row:auto!important}
 .port-grid .pi.hidden{display:none!important}
+
+/* ═══ PETITS ÉCRANS : aucun débordement horizontal ═══ */
+html,body{max-width:100%;overflow-x:hidden}
+img,video,svg{max-width:100%}
+.port-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))!important}
+.c-email{max-width:100%;overflow-wrap:anywhere}
+.hero-tags,.skill-tags,.hero-btns{flex-wrap:wrap}
+@media(max-width:760px){
+  #hero{overflow-x:clip}
+  .hero-text,.hero-visual,.about-content,.about-img-wrap{max-width:100%;min-width:0}
+  .hero-visual{display:flex;justify-content:center}
+  .photo-ring{max-width:min(320px,78vw)}
+  .stats-bar{flex-wrap:wrap;grid-template-columns:repeat(2,1fr)}
+  .stats-bar .si{min-width:42%;flex:1 1 42%}
+  .about-img-wrap img{width:100%}
+  .test-grid,.proc{grid-template-columns:1fr!important}
+  section{overflow-x:clip}
+}
 </style>
 </head>
 <body>
@@ -209,7 +227,7 @@ section{scroll-margin-top:70px}
       <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
       <h3>Gestion des Réseaux Sociaux</h3>
       <p>Gestion quotidienne de vos pages <strong>LinkedIn</strong> et <strong>Facebook</strong> : stratégie éditoriale, calendrier de publication, contenus engageants et interaction avec votre communauté.</p>
-      
+      <div class="srv-more">En savoir plus →</div>
     </div>
 
     <!-- 2. Publicité / Ads -->
@@ -218,7 +236,7 @@ section{scroll-margin-top:70px}
       <div class="srv-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <h3>Publicité & Ads</h3>
       <p>Campagnes sur <strong>Facebook Ads</strong> : ciblage précis, visuels percutants et suivi des performances pour maximiser votre retour sur investissement.</p>
-      
+      <div class="srv-more">En savoir plus →</div>
     </div>
 
     <!-- 3. Branding -->
@@ -231,10 +249,10 @@ section{scroll-margin-top:70px}
       <span class="srv-tag">Identité Visuelle</span>
       <div class="srv-ico"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.5-.7-.5-1.1 0-.9.7-1.6 1.6-1.6H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.6-10-8.6z"/></svg></div>
       <h3>Branding & Identité Visuelle
-        <span style="font-size:.72rem;color:var(--gold);margin-left:.4rem;font-family:'DM Sans',sans-serif;font-weight:600"></span>
+        <span style="font-size:.72rem;color:var(--gold);margin-left:.4rem;font-family:'DM Sans',sans-serif;font-weight:600">↗ voir les créations</span>
       </h3>
       <p>Chartes graphiques, logos, templates réseaux sociaux et supports print pour <em>Fenou Immobilier</em>, <em>Nina Chips</em> et d'autres marques.</p>
-      
+      <div class="srv-more" style="color:var(--gold)">Voir mes créations ↗</div>
     </div>
 
     <!-- 4. Développement Web -->
@@ -257,7 +275,6 @@ section{scroll-margin-top:70px}
   <div class="port-filter reveal">
     <button class="fb active" data-filter="all">Tous</button>
     <button class="fb" data-filter="web">Web</button>
-    <button class="fb" data-filter="web">Application</button>
   </div>
 
   <div class="port-grid reveal">
@@ -270,7 +287,7 @@ section{scroll-margin-top:70px}
           onload="this.classList.add('loaded');document.getElementById('shimmer1').classList.add('hidden')"
           onerror="document.getElementById('shimmer1').innerHTML='<svg width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,.5)\' stroke-width=\'1.6\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg>'">
       </div>
-      <span class="pi-tag"></span>
+      <span class="pi-tag">Web</span>
       <div class="pi-ov">
         <h4>Projet fictif : landing page</h4>
         <p>HTML · CSS · JS</p>
@@ -310,7 +327,7 @@ section{scroll-margin-top:70px}
           onload="this.classList.add('loaded');document.getElementById('shimmer3').classList.add('hidden')"
           onerror="document.getElementById('shimmer3').innerHTML='<svg width=\'30\' height=\'30\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'rgba(255,255,255,.5)\' stroke-width=\'1.6\'><circle cx=\'12\' cy=\'12\' r=\'10\'/><line x1=\'2\' y1=\'12\' x2=\'22\' y2=\'12\'/><path d=\'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\'/></svg>'">
       </div>
-      <span class="pi-tag"></span>
+      <span class="pi-tag">Web</span>
       <div class="pi-ov">
         <h4>Portfolio : Arsène Gandonou</h4>
         <p>HTML · CSS · JS</p>
